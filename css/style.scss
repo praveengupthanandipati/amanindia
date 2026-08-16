@@ -1,0 +1,2991 @@
+@import "mixins";
+@import "variables";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+@import url("https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-straight/css/uicons-regular-straight.css");
+
+body {
+  @include siteMain;
+  overflow-x: hidden;
+
+  p {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+}
+
+a {
+  text-decoration: none;
+}
+
+// ==========================================
+// PAGE LOADER
+// ==========================================
+.page-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: map-get($colors, white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+
+  &.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+
+.page-loader-logo {
+  height: 42px;
+  width: auto;
+  animation: loaderPulse 1.4s ease-in-out infinite;
+}
+
+.page-loader-spinner {
+  width: 34px;
+  height: 34px;
+  border: 3px solid #f0f0f0;
+  border-top-color: map-get($colors, primary);
+  border-radius: 50%;
+  animation: loaderSpin 0.8s linear infinite;
+}
+
+@keyframes loaderSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loaderPulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.custom-container {
+  width: 85%;
+  margin: 0 auto;
+
+  @include minMax(map-get($breakpoints, "sm"), map-get($breakpoints, "lg")) {
+    width: 90%;
+  }
+
+  @include max(map-get($breakpoints, "sm")) {
+    width: 92%;
+  }
+}
+
+.default-btn {
+  padding: 16px 26px !important;
+  @include transition(all, 0.3s, ease);
+
+  @include max(map-get($breakpoints, "sm")) {
+    padding: 10px 15px !important;
+    font-size: $fsize - 2px;
+  }
+}
+
+.border-btn {
+  @extend .default-btn;
+  border: 1px solid map-get($colors, black);
+
+  &:hover {
+    background: map-get($colors, black);
+    color: map-get($colors, white) !important;
+    border: 1px solid transparent;
+  }
+}
+
+.primary-btn {
+  @extend .default-btn;
+  background: map-get($colors, primary);
+  color: map-get($colors, white) !important;
+  @include transition(all, 0.3s, ease);
+
+  &:hover {
+    background: map-get($colors, darkprimary);
+    color: map-get($colors, white) !important;
+  }
+}
+
+.orange-btn {
+  @extend .default-btn;
+  background: map-get($colors, secondary);
+  color: map-get($colors, white) !important;
+  @include transition(all, 0.3s, ease);
+
+  &:hover {
+    background: map-get($colors, darksecondary);
+    color: map-get($colors, white) !important;
+  }
+}
+
+.navbar-toggler:focus{
+  box-shadow: none;
+}
+
+// ==========================================
+// Shared 90%-width container (header, hero carousel, etc.)
+// ==========================================
+.header-container {
+  width: 90%;
+  max-width: 1600px;
+  margin: 0 auto;
+
+  @include max(map-get($breakpoints, "sm")) {
+    width: 94%;
+  }
+}
+
+// ==========================================
+// SITE HEADER (Row 1: black utility bar / Row 2: white category bar)
+// ==========================================
+.site-header {
+  position: relative;
+  z-index: 100;
+
+  // ---- Row 0: utility bar (hidden on mobile — see menu-toggle / mobile-drawer) ----
+  .header-utility {
+    background: #000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+    @include max(map-get($breakpoints, "md")) {
+      display: none;
+    }
+
+    .header-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 0;
+
+      @include max(map-get($breakpoints, "sm")) {
+        flex-direction: column;
+        gap: 6px;
+        padding: 10px 0;
+      }
+    }
+
+    ul {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      gap: 1.5rem;
+
+      @include max(map-get($breakpoints, "sm")) {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+
+    li {
+      position: relative;
+
+      &:not(:last-child):after {
+        content: "";
+        position: absolute;
+        right: -0.8rem;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 1px;
+        height: 11px;
+        background: rgba(255, 255, 255, 0.25);
+      }
+    }
+
+    a {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: $fsize - 3.5px;
+      letter-spacing: 0.2px;
+      @include transition(color, 0.3s, ease);
+
+      &:hover {
+        color: map-get($colors, primary);
+      }
+    }
+
+    .utility-links-right a {
+      @extend .font-semibold;
+      color: map-get($colors, white);
+    }
+  }
+
+  // ---- Row 1 ----
+  .header-top {
+    background: #000;
+
+    .header-container {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+      padding: 1.1rem 0;
+
+      @include max(map-get($breakpoints, "lg")) {
+        flex-wrap: wrap;
+        gap: 1rem;
+        padding: 1rem 0;
+      }
+    }
+  }
+
+  // ---- Mobile hamburger (opens the off-canvas category drawer) ----
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+
+    span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      border-radius: 2px;
+      background: map-get($colors, white);
+      @include transition(all, 0.3s, ease);
+    }
+
+    &.is-active {
+      span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+      }
+
+      span:nth-child(2) {
+        opacity: 0;
+      }
+
+      span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+      }
+    }
+
+    @include max(map-get($breakpoints, "md")) {
+      display: flex;
+    }
+  }
+
+  .header-logo {
+    flex-shrink: 0;
+    display: inline-flex;
+
+    img {
+      height: 60px;
+      width: auto;
+      display: block;
+      @include transition(all, 0.3s, ease);
+    }
+
+    @include max(map-get($breakpoints, "md")) {
+      img {
+        height: 32px;
+      }
+    }
+  }
+
+  // ---- Search ----
+  .search-wrap {
+    position: relative;
+    flex: 1 1 auto;
+    max-width: 680px;
+
+    @include max(map-get($breakpoints, "lg")) {
+      order: 3;
+      flex: 1 1 100%;
+      max-width: 100%;
+    }
+  }
+
+  .header-search {
+    width: 100%;
+    display: flex;
+    align-items: stretch;
+    background: map-get($colors, white);
+    border-radius: 0;
+    overflow: hidden;
+    border: 2px solid transparent;
+    @include transition(border-color, 0.3s, ease);
+
+    &:focus-within {
+      border-color: map-get($colors, primary);
+    }
+  }
+
+  // ---- Search autocomplete dropdown ----
+  .search-suggestions {
+    display: none;
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    right: 0;
+    background: map-get($colors, white);
+    border-radius: 6px;
+    max-height: 380px;
+    overflow-y: auto;
+    z-index: 200;
+    @include box-shadow(0, 12px, 30px, rgba(0, 0, 0, 0.18));
+
+    &.active {
+      display: block;
+    }
+
+    .suggestion-label {
+      padding: 10px 18px 6px;
+      font-size: $fsize - 3px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: map-get($colors, gray);
+      @extend .font-semibold;
+    }
+
+    .suggestion-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 18px;
+      cursor: pointer;
+      color: map-get($colors, black);
+      font-size: $fsize - 1px;
+      @include transition(background, 0.15s, ease);
+
+      i {
+        color: map-get($colors, gray);
+        font-size: $fsize - 2px;
+        flex-shrink: 0;
+      }
+
+      span.item-name {
+        flex: 1;
+        min-width: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+        strong {
+          color: map-get($colors, primary);
+          font-weight: map-get($font-weights, semibold);
+        }
+      }
+
+      .item-category {
+        flex-shrink: 0;
+        font-size: $fsize - 4px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: map-get($colors, gray);
+      }
+
+      &:hover,
+      &.active-item {
+        background: #fdecee;
+
+        .item-category {
+          color: map-get($colors, primary);
+        }
+      }
+    }
+
+    .no-results {
+      padding: 16px 18px;
+      color: map-get($colors, gray);
+      font-size: $fsize - 1px;
+    }
+
+    @include max(map-get($breakpoints, "md")) {
+      max-height: 300px;
+    }
+  }
+
+  .search-input {
+    flex: 1;
+    min-width: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 12px 20px;
+    font-size: $fsize - 1px;
+    color: map-get($colors, black);
+
+    &::placeholder {
+      color: map-get($colors, gray);
+    }
+  }
+
+  .search-btn {
+    flex-shrink: 0;
+    width: 52px;
+    border: none;
+    background: map-get($colors, primary);
+    color: map-get($colors, white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: $fsize + 2px;
+    cursor: pointer;
+    @include transition(background, 0.3s, ease);
+
+    &:hover {
+      background: map-get($colors, darkprimary);
+    }
+  }
+
+  // ---- Login / Support (always pinned to the right, incl. mobile) ----
+  .header-actions {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+    margin-left: auto;
+
+    @include max(map-get($breakpoints, "lg")) {
+      order: 2;
+    }
+
+    @include max(map-get($breakpoints, "sm")) {
+      gap: 1.1rem;
+    }
+  }
+
+  .header-action-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    color: map-get($colors, white);
+    font-size: $fsize - 3px;
+    @extend .font-semibold;
+    @include transition(color, 0.3s, ease);
+
+    i {
+      font-size: $fsize + 6px;
+      @include transition(color, 0.3s, ease);
+    }
+
+    &:hover {
+      color: map-get($colors, primary);
+    }
+  }
+
+  // ---- Row 2: category bar (hidden on mobile — see mobile-drawer) ----
+  .header-categories {
+    background: map-get($colors, white);
+    border-bottom: 1px solid #eee;
+
+    @include max(map-get($breakpoints, "md")) {
+      display: none;
+    }
+  }
+
+  .category-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 14px 0;
+    gap: 2.75rem;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    li a {
+      position: relative;
+      display: inline-block;
+      padding-bottom: 4px;
+      color: map-get($colors, black);
+      font-size: $fsize - 1.5px;
+      @extend .font-semibold;
+      @include transition(color, 0.3s, ease);
+
+      &:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 2px;
+        background: map-get($colors, primary);
+        @include transition(width, 0.3s, ease);
+      }
+
+      &:hover {
+        color: map-get($colors, primary);
+
+        &:after {
+          width: 100%;
+        }
+      }
+    }
+
+    @include max(map-get($breakpoints, "lg")) {
+      justify-content: flex-start;
+      gap: 2rem;
+    }
+
+    @include max(map-get($breakpoints, "md")) {
+      gap: 1.5rem;
+      padding: 12px 0;
+
+      li a {
+        font-size: $fsize - 2px;
+      }
+    }
+  }
+}
+
+// ==========================================
+// MOBILE CATEGORY DRAWER (off-canvas)
+// ==========================================
+body.drawer-open {
+  overflow: hidden;
+}
+
+.mobile-drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 998;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  @include transition(opacity, 0.3s, ease);
+
+  &.is-active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.mobile-drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 999;
+  width: 82%;
+  max-width: 320px;
+  background: map-get($colors, white);
+  transform: translateX(-100%);
+  @include transition(transform, 0.35s, ease);
+  overflow-y: auto;
+  @include box-shadow(8px, 0, 30px, rgba(0, 0, 0, 0.2));
+
+  &.is-active {
+    transform: translateX(0);
+  }
+}
+
+.mobile-drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2rem 1.3rem;
+  background: #000;
+
+  span {
+    color: map-get($colors, white);
+    font-size: $fsize - 1px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    @extend .font-semibold;
+  }
+}
+
+.mobile-drawer-close {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  border: none;
+  color: map-get($colors, white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  @include transition(background, 0.3s, ease);
+
+  svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  &:hover {
+    background: map-get($colors, primary);
+  }
+}
+
+.mobile-drawer-list {
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem 0;
+
+  li {
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  a {
+    display: block;
+    padding: 14px 1.3rem;
+    color: map-get($colors, black);
+    font-size: $fsize;
+    @extend .font-semibold;
+    @include transition(all, 0.2s, ease);
+
+    &:hover {
+      color: map-get($colors, primary);
+      background: #fafafa;
+    }
+  }
+}
+
+// ==========================================
+// HEADER (legacy template — kept for future inner pages)
+// ==========================================
+header {
+  .top-header {
+    @include linear-gradient(270deg, #f3ae3d 0%, #d9273d 100%);
+    color: map-get($colors, white);
+    padding: 0.5rem 0;
+    font-size: $fsize - 2px;
+    @include transition(all, 0.3s, ease);
+
+    a {
+      color: map-get($colors, white);
+    }
+  }
+
+  .header-social {
+    a {
+      background: map-get($colors, white);
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+
+      .icomoon {
+        font-size: $fsize + 2px;
+        color: map-get($colors, black);
+      }
+    }
+  }
+
+  .mainnav {
+    position: relative;
+
+    .navbar-brand {
+      img {
+        width: 200px;
+        @include transition(all, 0.3s, ease);
+
+        @include max(map-get($breakpoints, "md")) {
+          width: 150px;
+        }
+      }
+    }
+  }
+
+  .nav-item {
+    .nav-link {
+      @extend .font-semibold;
+
+      @include max(map-get($breakpoints, "xxl")) {
+        padding: 10px;
+        font-size: 15px;
+      }
+
+      &:hover {
+        color: map-get($colors, primary) !important;
+      }
+    }
+
+    @include max(map-get($breakpoints, "lg")) {
+      .nav-link {
+        padding: 8px 0;
+      }
+    }
+  }
+
+  // Nav CTA buttons (Contact & Book a Party)
+  .navbar-collapse .navbar-nav.ms-auto {
+    @include max(map-get($breakpoints, "xxl")) {
+
+      .border-btn,
+      .primary-btn {
+        padding: 10px 16px !important;
+        font-size: 14px;
+      }
+
+      .nav-item.ms-3 {
+        margin-left: 0.5rem !important;
+      }
+    }
+
+    @include max(map-get($breakpoints, "lg")) {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+
+      .nav-item {
+        margin-bottom: 0.5rem;
+
+        &.ms-3 {
+          margin-left: 0 !important;
+        }
+      }
+
+      .border-btn,
+      .primary-btn {
+        display: block;
+        text-align: center;
+        width: 100%;
+        padding: 12px 20px !important;
+        font-size: 15px;
+      }
+    }
+  }
+}
+
+
+.fixed-top-nav {
+  .top-header {
+    position: relative;
+    top: -57px;
+    padding: 0;
+    height: 0;
+  }
+
+  .mainnav {
+    background: map-get($colors, white);
+    @include box-shadow(0, 2px, 4px, rgba(0, 0, 0, 0.1));
+    padding: 0.5rem 0;
+
+    .navbar-brand {
+      img {
+        width: 150px;
+
+        @include max(map-get($breakpoints, "md")) {
+          width: 120px;
+        }
+      }
+    }
+  }
+}
+
+// ==========================================
+// HERO CAROUSEL (home banner - Swiper)
+// ==========================================
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(26px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-carousel {
+  position: relative;
+  overflow: hidden;
+
+  .swiper-slide {
+    position: relative;
+    height: 560px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+
+    @include max(map-get($breakpoints, "lg")) {
+      height: 460px;
+    }
+
+    @include max(map-get($breakpoints, "md")) {
+      height: 520px;
+    }
+
+    @include max(map-get($breakpoints, "sm")) {
+      height: 560px;
+    }
+
+    > .header-container {
+      position: relative;
+      z-index: 2;
+    }
+  }
+
+  // Solid scrim on the left where captions sit (also masks any baked-in
+  // text/CTAs already present in the source banner images), fading out
+  // toward the right so the product photography stays visible.
+  .slide-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, #000 0%, #000 42%, rgba(0, 0, 0, 0.75) 54%, rgba(0, 0, 0, 0) 78%);
+
+    @include max(map-get($breakpoints, "sm")) {
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.35) 0%, #000 60%, #000 100%);
+    }
+  }
+
+  .slide-content {
+    max-width: 560px;
+
+    @include max(map-get($breakpoints, "sm")) {
+      max-width: 100%;
+    }
+  }
+
+  .slide-eyebrow,
+  .slide-title,
+  .slide-desc,
+  .slide-cta {
+    opacity: 0;
+    transform: translateY(26px);
+  }
+
+  .slide-eyebrow {
+    display: inline-block;
+    background: rgba(228, 0, 43, 0.18);
+    border: 1px solid map-get($colors, primary);
+    color: map-get($colors, white);
+    padding: 6px 18px;
+    border-radius: 30px;
+    font-size: $fsize - 3px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    @extend .font-semibold;
+    margin-bottom: 1.3rem;
+  }
+
+  .slide-title {
+    color: map-get($colors, white);
+    font-size: clamp(1.9rem, 3.6vw, 3.2rem);
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 1.1rem;
+  }
+
+  .slide-desc {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: $fsize + 1px;
+    max-width: 460px;
+    margin-bottom: 1.9rem;
+
+    @include max(map-get($breakpoints, "md")) {
+      font-size: $fsize - 1px;
+    }
+  }
+
+  .slide-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: map-get($colors, primary);
+    color: map-get($colors, white) !important;
+    font-size: $fsize - 1px;
+    @extend .font-semibold;
+    padding: 15px 30px;
+    border-radius: 2px;
+    @include transition(all, 0.3s, ease);
+
+    i {
+      @include transition(transform, 0.3s, ease);
+    }
+
+    &:hover {
+      background: map-get($colors, darkprimary);
+
+      i {
+        transform: translateX(4px);
+      }
+    }
+  }
+
+  .swiper-slide-active {
+    .slide-eyebrow {
+      animation: heroFadeUp 0.6s ease 0.25s forwards;
+    }
+
+    .slide-title {
+      animation: heroFadeUp 0.7s ease 0.4s forwards;
+    }
+
+    .slide-desc {
+      animation: heroFadeUp 0.7s ease 0.55s forwards;
+    }
+
+    .slide-cta {
+      animation: heroFadeUp 0.7s ease 0.7s forwards;
+    }
+  }
+
+  .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background: map-get($colors, white);
+    opacity: 0.55;
+    @include transition(all, 0.3s, ease);
+  }
+
+  .swiper-pagination-bullet-active {
+    opacity: 1;
+    width: 26px;
+    border-radius: 5px;
+    background: map-get($colors, primary);
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 48px;
+    height: 48px;
+    background: rgba(0, 0, 0, 0.35);
+    border-radius: 50%;
+    color: map-get($colors, white);
+    opacity: 0.55;
+    @include transition(all, 0.3s, ease);
+
+    &:after {
+      font-size: $fsize + 2px;
+    }
+
+    &:hover {
+      background: map-get($colors, primary);
+      opacity: 1;
+    }
+  }
+
+  @include max(map-get($breakpoints, "md")) {
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      display: none;
+    }
+  }
+}
+
+// ==========================================
+// SECTION HEADING (shared: Categories, Featured Products, Tab Products, Brands)
+// ==========================================
+.section-heading {
+  text-align: center;
+  margin-bottom: 3rem;
+
+  .cat-eyebrow {
+    display: inline-block;
+    color: map-get($colors, primary);
+    font-size: $fsize - 3px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    @extend .font-semibold;
+    margin-bottom: 0.6rem;
+  }
+
+  h2 {
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    font-weight: 700;
+    color: map-get($colors, black);
+    margin: 0;
+  }
+
+  @include max(map-get($breakpoints, "md")) {
+    margin-bottom: 2rem;
+  }
+}
+
+// ==========================================
+// CATEGORIES SECTION
+// ==========================================
+.categories-section {
+  padding: 4.5rem 0;
+  background: map-get($colors, white);
+
+  .category-grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 1.25rem;
+
+    @include max(map-get($breakpoints, "xxl")) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    @include max(map-get($breakpoints, "sm")) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.8rem;
+    }
+
+    @include max(420px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .category-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.8rem 1rem;
+    background: map-get($colors, white);
+    border: 1px solid #eee;
+    border-radius: 12px;
+    @include transition(all, 0.3s, ease);
+
+    @include max(map-get($breakpoints, "sm")) {
+      padding: 1.3rem 0.6rem;
+      border-radius: 10px;
+    }
+  }
+
+  .category-icon {
+    width: 64px;
+    height: 64px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #fdecee;
+    color: map-get($colors, primary);
+    margin-bottom: 1rem;
+    @include transition(all, 0.3s, ease);
+
+    svg {
+      width: 28px;
+      height: 28px;
+    }
+
+    @include max(map-get($breakpoints, "sm")) {
+      width: 52px;
+      height: 52px;
+      margin-bottom: 0.7rem;
+
+      svg {
+        width: 22px;
+        height: 22px;
+      }
+    }
+  }
+
+  .category-name {
+    font-size: $fsize - 1.5px;
+    @extend .font-semibold;
+    color: map-get($colors, black);
+    line-height: 1.3;
+    @include transition(color, 0.3s, ease);
+
+    @include max(map-get($breakpoints, "sm")) {
+      font-size: $fsize - 3px;
+    }
+  }
+
+  .category-card:hover {
+    transform: translateY(-6px);
+    border-color: map-get($colors, primary);
+    @include box-shadow(0, 14px, 30px, rgba(0, 0, 0, 0.1));
+
+    .category-icon {
+      background: map-get($colors, primary);
+      color: map-get($colors, white);
+    }
+
+    .category-name {
+      color: map-get($colors, primary);
+    }
+  }
+}
+
+// ==========================================
+// COLUMNS IMG SECTION (promo strip)
+// ==========================================
+.columnsimg-section {
+  padding: 4.5rem 0;
+  background: map-get($colors, white);
+
+  .header-container {
+    padding-left: 0;
+    padding-right: 0;
+    max-width: 1600px;
+  }
+
+  .promo-columns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-radius: 14px;
+    overflow: hidden;
+
+    @include max(map-get($breakpoints, "lg")) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .promo-col {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    min-height: 300px;
+    padding: 2.5rem 1.5rem 2.5rem 2.5rem;
+    overflow: hidden;
+    @include transition(background, 0.3s, ease);
+
+    &--slate {
+      background: linear-gradient(135deg, #eef1f5 0%, #e3e8ee 100%);
+    }
+
+    &--sky {
+      background: linear-gradient(135deg, #eaf5fc 0%, #d9edf9 100%);
+    }
+
+    &--peach {
+      background: linear-gradient(135deg, #fbeeed 0%, #f6e0dd 100%);
+    }
+
+    @include max(map-get($breakpoints, "md")) {
+      min-height: 220px;
+      padding: 2rem;
+    }
+  }
+
+  .promo-text {
+    position: relative;
+    z-index: 2;
+    flex-shrink: 0;
+    max-width: 55%;
+
+    @include max(map-get($breakpoints, "md")) {
+      max-width: 60%;
+    }
+  }
+
+  .promo-eyebrow {
+    display: block;
+    color: map-get($colors, gray);
+    font-size: $fsize - 2px;
+    margin-bottom: 0.4rem;
+  }
+
+  .promo-title {
+    font-size: clamp(1.3rem, 1.9vw, 1.6rem);
+    font-weight: 700;
+    color: map-get($colors, black);
+    margin: 0 0 1.8rem;
+
+    @include max(map-get($breakpoints, "md")) {
+      margin-bottom: 1.2rem;
+    }
+  }
+
+  .discount-label {
+    display: block;
+    color: map-get($colors, gray);
+    font-size: $fsize - 3px;
+    margin-bottom: 0.3rem;
+  }
+
+  .price-row {
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+  }
+
+  .price-now {
+    color: map-get($colors, primary);
+    font-weight: 700;
+    font-size: $fsize + 3px;
+  }
+
+  .price-old {
+    color: map-get($colors, gray);
+    text-decoration: line-through;
+    font-size: $fsize - 1px;
+  }
+
+  .promo-media {
+    position: relative;
+    z-index: 1;
+    flex-shrink: 0;
+    width: 42%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    align-self: flex-end;
+    margin-bottom: -2.5rem;
+    @include transition(transform, 0.4s, ease);
+
+    svg {
+      width: 100%;
+      height: auto;
+      max-height: 230px;
+      filter: drop-shadow(0 18px 20px rgba(0, 0, 0, 0.16));
+    }
+
+    @include max(map-get($breakpoints, "md")) {
+      margin-bottom: -2rem;
+
+      svg {
+        max-height: 160px;
+      }
+    }
+  }
+
+  .promo-col:hover .promo-media {
+    transform: translateY(-6px) scale(1.04);
+  }
+}
+
+// ==========================================
+// PRODUCT CARD (shared: Featured Products + Tab Products)
+// ==========================================
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  border-top: 1px solid #ececec;
+  border-left: 1px solid #ececec;
+
+  @include max(map-get($breakpoints, "xxl")) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @include max(map-get($breakpoints, "lg")) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include max(map-get($breakpoints, "sm")) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.product-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 1.6rem 1.6rem 1.8rem;
+  border-right: 1px solid #ececec;
+  border-bottom: 1px solid #ececec;
+  @include transition(box-shadow, 0.3s, ease);
+
+  @include max(map-get($breakpoints, "sm")) {
+    padding: 1.2rem 1.1rem 1.4rem;
+  }
+
+  &:hover {
+    @include box-shadow(0, 10px, 24px, rgba(0, 0, 0, 0.08));
+    z-index: 2;
+
+    .product-thumb img {
+      transform: scale(1.06);
+    }
+  }
+}
+
+.product-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.product-category {
+  color: map-get($colors, gray);
+  font-size: $fsize - 3px;
+
+  &--new {
+    color: map-get($colors, primary);
+    @extend .font-semibold;
+  }
+}
+
+.product-quick-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.quick-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  color: map-get($colors, gray);
+  font-size: $fsize - 2px;
+  @include transition(color, 0.3s, ease);
+
+  &:hover {
+    color: map-get($colors, primary);
+  }
+
+  &--disabled {
+    color: map-get($colors, primary);
+    cursor: not-allowed;
+
+    &:hover {
+      color: map-get($colors, primary);
+    }
+  }
+}
+
+.product-thumb {
+  position: relative;
+  display: block;
+  height: 190px;
+  margin-bottom: 1.4rem;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    @include transition(transform, 0.45s, ease);
+  }
+
+  @include max(map-get($breakpoints, "sm")) {
+    height: 130px;
+    margin-bottom: 1rem;
+  }
+}
+
+.thumb-cart {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #f3f3f3;
+  color: map-get($colors, gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: $fsize - 3px;
+  opacity: 0;
+  transform: translateY(6px);
+  @include transition(all, 0.3s, ease);
+}
+
+.product-card:hover .thumb-cart {
+  opacity: 1;
+  transform: translateY(0);
+  background: map-get($colors, primary);
+  color: map-get($colors, white);
+}
+
+.oos-badge {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: map-get($colors, primary);
+  font-size: $fsize - 2px;
+  @extend .font-semibold;
+  white-space: nowrap;
+}
+
+.product-card--oos {
+  .product-thumb img {
+    filter: grayscale(1);
+    opacity: 0.45;
+  }
+
+  .product-name,
+  .product-price {
+    opacity: 0.55;
+  }
+}
+
+.product-name {
+  display: block;
+  color: map-get($colors, black);
+  font-size: $fsize - 1px;
+  line-height: 1.4;
+  margin-bottom: 0.6rem;
+  @include transition(color, 0.3s, ease);
+}
+
+.product-card:hover .product-name {
+  color: map-get($colors, primary);
+}
+
+.product-price {
+  display: block;
+  color: map-get($colors, black);
+  font-size: $fsize + 1px;
+  @extend .font-semibold;
+  margin-top: auto;
+
+  &--offer {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+
+    .price-old {
+      color: map-get($colors, gray);
+      text-decoration: line-through;
+      font-weight: 400;
+      font-size: $fsize - 2px;
+    }
+
+    .price-now {
+      color: map-get($colors, primary);
+    }
+  }
+}
+
+.view-more-wrap {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.view-more-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 34px;
+  border: 1.5px solid map-get($colors, black);
+  color: map-get($colors, black);
+  font-size: $fsize - 1px;
+  @extend .font-semibold;
+  border-radius: 2px;
+  @include transition(all, 0.3s, ease);
+
+  i {
+    @include transition(transform, 0.3s, ease);
+  }
+
+  &:hover {
+    background: map-get($colors, black);
+    color: map-get($colors, white);
+    border-color: map-get($colors, black);
+
+    i {
+      transform: translateX(4px);
+    }
+  }
+}
+
+// ==========================================
+// FEATURED PRODUCTS
+// ==========================================
+.featured-products {
+  padding: 4.5rem 0 5rem;
+  background: map-get($colors, white);
+}
+
+// ==========================================
+// STORE SECTION (split black/image banner)
+// ==========================================
+.store-section {
+  background: #000;
+
+  .store-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+    min-height: 600px;
+
+    @include max(map-get($breakpoints, "lg")) {
+      grid-template-columns: 1fr;
+      min-height: 0;
+    }
+  }
+
+  .store-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 4rem 8% 4rem 6%;
+
+    @include max(map-get($breakpoints, "lg")) {
+      padding: 3.5rem 6%;
+      text-align: center;
+      align-items: center;
+
+      .store-cta {
+        align-self: center;
+      }
+    }
+
+    @include max(map-get($breakpoints, "sm")) {
+      padding: 3rem 6%;
+    }
+  }
+
+  h2 {
+    color: map-get($colors, white);
+    font-size: clamp(1.8rem, 3.2vw, 2.9rem);
+    font-weight: 600;
+    line-height: 1.25;
+    margin-bottom: 1.4rem;
+  }
+
+  .store-text p {
+    color: rgba(255, 255, 255, 0.65);
+    font-size: $fsize;
+    line-height: 1.75;
+    max-width: 460px;
+    margin-bottom: 2.2rem;
+  }
+
+  .store-cta {
+    display: inline-flex;
+    align-self: flex-start;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 20px;
+    border-radius: 50px;
+    background: linear-gradient(120deg, map-get($colors, primary) 0%, map-get($colors, darkprimary) 100%);
+    color: map-get($colors, white) !important;
+    font-size: $fsize - 3px;
+    @extend .font-semibold;
+    @include transition(all, 0.3s, ease);
+
+    &:hover {
+      transform: translateY(-3px);
+      @include box-shadow(0, 12px, 26px, rgba(228, 0, 43, 0.35));
+    }
+  }
+
+  .store-media {
+    position: relative;
+    overflow: hidden;
+    min-height: 340px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  }
+
+  .store-media-actions {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .store-action {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.92);
+    color: map-get($colors, black);
+    font-size: $fsize + 2px;
+    @include box-shadow(0, 4px, 14px, rgba(0, 0, 0, 0.18));
+    @include transition(all, 0.3s, ease);
+
+    &:hover {
+      background: map-get($colors, primary);
+      color: map-get($colors, white);
+      transform: translateY(-2px);
+    }
+
+    &--primary {
+      background: map-get($colors, primary);
+      color: map-get($colors, white);
+
+      &:hover {
+        background: map-get($colors, darkprimary);
+      }
+    }
+  }
+
+  .store-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.85);
+    color: map-get($colors, black);
+    font-size: $fsize + 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    @include transition(all, 0.3s, ease);
+
+    &:hover {
+      background: map-get($colors, white);
+      transform: translateY(-50%) scale(1.08);
+    }
+
+    @include max(map-get($breakpoints, "sm")) {
+      width: 38px;
+      height: 38px;
+      font-size: $fsize + 1px;
+    }
+  }
+
+  .store-nav-prev {
+    left: 20px;
+  }
+
+  .store-nav-next {
+    right: 20px;
+  }
+
+  .store-expand {
+    position: absolute;
+    bottom: 18px;
+    right: 18px;
+    z-index: 3;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.55);
+    color: map-get($colors, white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: $fsize - 3px;
+  }
+}
+
+// ==========================================
+// TAB PRODUCTS (desktop tabs / mobile accordion)
+// ==========================================
+.tab-products-section {
+  padding: 4.5rem 0 5rem;
+  background: map-get($colors, white);
+
+  // ---- Tabs (desktop) ----
+  .tabs-nav-wrap {
+    position: relative;
+    margin-bottom: 2.5rem;
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 1px;
+      width: 44px;
+      background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 70%);
+      pointer-events: none;
+      display: none;
+    }
+  }
+
+  .tabs-nav {
+    display: none;
+    align-items: center;
+    gap: 2.2rem;
+    border-bottom: 1px solid #ececec;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .tab-btn {
+    position: relative;
+    flex-shrink: 0;
+    background: none;
+    border: none;
+    padding: 0 0 1.1rem;
+    color: map-get($colors, gray);
+    font-size: $fsize - 1px;
+    @extend .font-semibold;
+    cursor: pointer;
+    white-space: nowrap;
+    @include transition(color, 0.3s, ease);
+
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -1px;
+      width: 100%;
+      height: 2px;
+      background: map-get($colors, primary);
+      transform: scaleX(0);
+      transform-origin: left;
+      @include transition(transform, 0.3s, ease);
+    }
+
+    &:hover {
+      color: map-get($colors, black);
+    }
+
+    &.is-active {
+      color: map-get($colors, primary);
+
+      &:after {
+        transform: scaleX(1);
+      }
+    }
+  }
+
+  // ---- Accordion header (mobile) ----
+  // The unified "all" group is desktop-only (see min(lg) override below);
+  // on mobile/accordion it's always hidden, so the top border goes on the
+  // group right after it (the first real accordion panel) instead of
+  // :first-child, which would otherwise land on the hidden "all" group.
+  .tab-group--all {
+    display: none;
+  }
+
+  .tab-group {
+    border-bottom: 1px solid #ececec;
+  }
+
+  .tab-group--all + .tab-group {
+    border-top: 1px solid #ececec;
+  }
+
+  .accordion-header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: none;
+    border: none;
+    padding: 1.3rem 0.2rem;
+    cursor: pointer;
+    color: map-get($colors, black);
+    font-size: $fsize + 1px;
+    @extend .font-semibold;
+
+    i {
+      color: map-get($colors, gray);
+      font-size: $fsize;
+      @include transition(transform, 0.3s, ease);
+    }
+  }
+
+  .tab-group.is-open .accordion-header i {
+    transform: rotate(180deg);
+    color: map-get($colors, primary);
+  }
+
+  // ---- Product grid collapse (accordion, mobile/tablet only) ----
+  .tab-panel-grid {
+    max-height: 0;
+    overflow: hidden;
+    @include transition(max-height, 0.4s, ease);
+  }
+
+  .tab-group.is-open .tab-panel-grid {
+    max-height: 1400px;
+  }
+
+  // ---- Empty state (categories without a live catalog yet) ----
+  .tab-empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 3.5rem 1.5rem;
+    border: 1px solid #ececec;
+
+    .tab-empty-icon {
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: #fdecee;
+      color: map-get($colors, primary);
+      margin-bottom: 1.2rem;
+
+      svg {
+        width: 26px;
+        height: 26px;
+      }
+    }
+
+    h3 {
+      font-size: $fsize + 1px;
+      font-weight: 600;
+      color: map-get($colors, black);
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      color: map-get($colors, gray);
+      font-size: $fsize - 1px;
+      max-width: 360px;
+    }
+  }
+
+  // ---- Desktop layout: tabs replace accordion ----
+  @include min(map-get($breakpoints, "lg")) {
+    .tabs-nav {
+      display: flex;
+    }
+
+    .tabs-nav-wrap:after {
+      display: block;
+    }
+
+    .tab-group {
+      border: none;
+
+      &:first-child {
+        border-top: none;
+      }
+    }
+
+    .accordion-header {
+      display: none;
+    }
+
+    .tab-panel-grid {
+      max-height: none;
+      overflow: visible;
+    }
+
+    // Tabs control visibility: JS toggles .is-current on the matching group
+    .tab-group {
+      display: none;
+    }
+
+    .tab-group.is-current {
+      display: block;
+    }
+  }
+}
+
+// ==========================================
+// SHOP BY BRAND
+// ==========================================
+.shopby-brand-section {
+  padding: 4.5rem 0 5rem;
+  background: map-get($colors, white);
+
+  .brand-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    border-top: 1px solid #ececec;
+    border-left: 1px solid #ececec;
+
+    @include max(map-get($breakpoints, "lg")) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include max(map-get($breakpoints, "sm")) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .brand-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 120px;
+    padding: 1.5rem 2rem;
+    border-right: 1px solid #ececec;
+    border-bottom: 1px solid #ececec;
+    @include transition(background, 0.3s, ease);
+
+    img {
+      max-width: 100%;
+      max-height: 32px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      filter: grayscale(1);
+      opacity: 0.5;
+      @include transition(all, 0.35s, ease);
+    }
+
+    &:hover {
+      background: #fafafa;
+
+      img {
+        filter: grayscale(0);
+        opacity: 1;
+        transform: scale(1.06);
+      }
+    }
+
+    @include max(map-get($breakpoints, "sm")) {
+      height: 90px;
+      padding: 1rem 1.2rem;
+
+      img {
+        max-height: 24px;
+      }
+    }
+  }
+}
+
+// ==========================================
+// HERO SECTION
+// ==========================================
+.hero-section {
+  @include linear-gradient(70deg, #cddcff80 0%, #ffbdbf80 100%);
+  height: 100vh;
+  padding-top: 12%;
+
+  h1 {
+    font-size: clamp(2rem, 6.3vw, 6.3rem);
+    @extend .font-bold;
+
+    span {
+      color: map-get($colors, thirdcolour);
+    }
+  }
+
+  article {
+    padding-left: 40%;
+
+    p {
+      font-size: clamp(1rem, 1.1vw, 1.1rem);
+    }
+  }
+
+  // Tablet
+  @include max(map-get($breakpoints, "lg")) {
+    height: auto;
+    padding-top: 120px;
+    padding-bottom: 3rem;
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+    }
+
+    article {
+      padding-left: 0;
+    }
+  }
+
+  // Mobile
+  @include max(map-get($breakpoints, "md")) {
+    padding-top: 100px;
+    padding-bottom: 2rem;
+
+    h1 {
+      font-size: clamp(1.8rem, 8vw, 2.5rem);
+
+      br {
+        display: none;
+      }
+    }
+
+    article {
+      padding-left: 0;
+
+      p {
+        font-size: $fsize - 1px;
+      }
+    }
+  }
+}
+
+.hero-swiper {
+  margin-top: 3rem;
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #444;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @include max(map-get($breakpoints, "md")) {
+    margin-top: 1.5rem;
+  }
+}
+
+.hero-right-swiper {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 40%;
+  height: auto;
+
+  &:before {
+    content: "";
+    position: absolute;
+    bottom: 35px;
+    right: 81px;
+    background: map-get($colors, thirdcolour);
+    width: 98%;
+    height: 98%;
+    border-top-left-radius: 500px;
+    border-top-right-radius: 500px;
+    border-bottom-left-radius: 440px;
+  }
+
+  swiper-slide {
+    background-position: center;
+    background-size: cover;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 90% !important;
+    border-top-left-radius: 500px;
+    border-top-right-radius: 500px;
+    border-bottom-left-radius: 500px;
+  }
+
+  // Tablet
+  @include max(map-get($breakpoints, "lg")) {
+    position: relative;
+    width: 80%;
+    margin: 2rem auto 0;
+    right: auto;
+    bottom: auto;
+
+    &:before {
+      right: 40px;
+      bottom: 20px;
+    }
+  }
+
+  // Mobile
+  @include max(map-get($breakpoints, "md")) {
+    width: 90%;
+    margin: 1.5rem auto 0;
+
+    &:before {
+      right: 20px;
+      bottom: 15px;
+      border-top-left-radius: 200px;
+      border-top-right-radius: 200px;
+      border-bottom-left-radius: 200px;
+    }
+
+    .swiper-slide img {
+      border-top-left-radius: 200px;
+      border-top-right-radius: 200px;
+      border-bottom-left-radius: 200px;
+    }
+  }
+}
+
+// ==========================================
+// MARQUEE SECTION
+// ==========================================
+.marquee-section {
+  padding: 3rem 0;
+  position: relative;
+  background: map-get($colors, white);
+
+  .zoneicon01 {
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+
+    @include max(map-get($breakpoints, "md")) {
+      width: 60px;
+      bottom: 2%;
+      left: 2%;
+    }
+  }
+
+  h6 {
+    font-size: clamp(1rem, 6.2vw, 6.2rem);
+    @extend .font-semibold;
+    position: relative;
+    padding-left: 3rem;
+    color: map-get($colors, thirdcolour);
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 30%;
+      left: -30px;
+      width: 64px;
+      height: 64px;
+      background: url(../img/sparkles2.png);
+    }
+
+    @include max(map-get($breakpoints, "md")) {
+      font-size: clamp(1.5rem, 8vw, 2.5rem);
+      padding-left: 2rem;
+
+      &:before {
+        width: 32px;
+        height: 32px;
+        background-size: contain;
+        left: -15px;
+      }
+    }
+  }
+
+  // Custom Marquee Styles
+  .custom-marquee-wrapper {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .custom-marquee {
+    display: flex;
+    width: max-content;
+    animation: marquee-scroll 40s linear infinite;
+  }
+
+  .custom-marquee:hover {
+    animation-play-state: paused;
+  }
+
+  @keyframes marquee-scroll {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  @include max(map-get($breakpoints, "md")) {
+    padding: 2rem 0;
+  }
+}
+
+// ==========================================
+// SECTION TITLE
+// ==========================================
+.section-title {
+  p.subtext {
+    font-size: clamp(0.8rem, 1.1vw, 1.1rem);
+    letter-spacing: 3px;
+    @extend .font-semibold;
+    text-transform: uppercase;
+  }
+
+  h2 {
+    font-size: clamp(1.5rem, 3.5vw, 3.5rem);
+    @extend .font-bold;
+    text-transform: uppercase;
+    color: map-get($colors, black);
+  }
+
+  @include max(map-get($breakpoints, "md")) {
+    padding-left: 10px;
+    padding-right: 10px;
+
+    p.subtext {
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+    }
+
+    h2 {
+      font-size: clamp(1.3rem, 6vw, 1.8rem);
+    }
+
+    p {
+      font-size: $fsize - 1px;
+    }
+  }
+}
+
+// ==========================================
+// ZONE SECTION
+// ==========================================
+.zone-section {
+  .zone-col {
+    article {
+      padding-right: 3rem;
+
+      .age-label {
+        padding: 5px 15px;
+        background: map-get($colors, white);
+        color: map-get($colors, black);
+        border-radius: 25px;
+        font-size: $fsize - 2px;
+        font-weight: map-get($font-weights, semibold);
+      }
+
+      .desc {
+        padding: 1.5rem 3.8rem 1.5rem 1.5rem;
+        position: relative;
+        color: map-get($colors, white);
+
+        p {
+          font-size: $fsize - 1px;
+        }
+
+        .icomoon {
+          width: 40px;
+          height: 40px;
+          display: inline-block;
+          background: map-get($colors, white);
+          color: map-get($colors, thirdcolour);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          right: 10px;
+          bottom: 10px;
+          border-radius: 100px;
+        }
+      }
+
+      @include max(map-get($breakpoints, "md")) {
+        padding-right: 1rem;
+
+        .desc {
+          padding: 1rem 2.5rem 1rem 1rem;
+        }
+      }
+    }
+  }
+
+  @include max(map-get($breakpoints, "lg")) {
+    .row>[class*="col-lg-4"] {
+      margin-bottom: 1.5rem;
+    }
+  }
+}
+
+// ==========================================
+// WHO WE ARE SECTION
+// ==========================================
+.who-we-are-home-section {
+  @include linear-gradient(70deg, #e3eeff 0%, #f3e7e9 50%);
+  padding: 6rem 0;
+
+  .right-col {
+    background: url(../img/whovr-bg.png) no-repeat center;
+    background-size: cover;
+  }
+
+  .whovr01icon {
+    width: 150px;
+    top: 2%;
+    right: 1%;
+  }
+
+  .whovr02icon {
+    width: 150px;
+    bottom: 2%;
+    right: 1%;
+  }
+
+  // Tablet
+  @include max(map-get($breakpoints, "lg")) {
+
+    .whovr01icon,
+    .whovr02icon {
+      width: 80px;
+    }
+  }
+
+  // Mobile
+  @include max(map-get($breakpoints, "md")) {
+    padding: 3rem 0;
+    overflow: hidden;
+
+    .whovr01icon,
+    .whovr02icon {
+      width: 60px;
+    }
+
+    .left-col {
+      margin-bottom: 2rem;
+
+      img {
+        width: 100%;
+        border-radius: 10px;
+      }
+    }
+
+    .right-col {
+      .row .col-sm-6 {
+        article {
+          padding-top: 1.5rem !important;
+
+          h3 {
+            font-size: 1.1rem;
+          }
+
+          p {
+            font-size: $fsize - 2px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// ==========================================
+// SAFETY SECTION
+// ==========================================
+.safety-section {
+  background: map-get($colors, white);
+  padding-bottom: 6rem;
+
+  .safety-col {
+    position: relative;
+
+    .number {
+      font-size: clamp(1.5rem, 6vw, 6rem);
+      font-weight: map-get($font-weights, semibold);
+      color: #f2f2f2;
+      transform: rotate(-90deg);
+      position: absolute;
+      top: 25%;
+      left: -20px;
+      transform: translateY(-50%) rotate(-90deg);
+    }
+
+    figure {
+      background: map-get($colors, white);
+      width: 86px;
+      height: 86px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      margin: 0;
+      margin-bottom: 2rem;
+      @include box-shadow(0, 2px, 4px, rgba(0, 0, 0, 0.1));
+
+      .icomoon {
+        font-size: $fsize + 25px;
+        color: map-get($colors, black);
+      }
+    }
+  }
+
+  // Tablet
+  @include max(map-get($breakpoints, "md")) {
+    padding-bottom: 3rem;
+
+    .row>[class*="col-md-3"] {
+      flex: 0 0 50%;
+      max-width: 50%;
+      margin-bottom: 2rem;
+    }
+
+    .safety-col {
+      .number {
+        font-size: 2.5rem;
+        left: -15px;
+      }
+
+      figure {
+        width: 65px;
+        height: 65px;
+        margin-bottom: 1rem;
+
+        .icomoon {
+          font-size: $fsize + 15px;
+        }
+      }
+
+      article {
+        h4 {
+          font-size: 0.95rem;
+        }
+
+        p {
+          font-size: $fsize - 2px;
+        }
+      }
+    }
+  }
+
+  // Small mobile
+  @include max(575px) {
+    .row>[class*="col-md-3"] {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+
+    .safety-col {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      text-align: left !important;
+
+      .number {
+        position: static;
+        transform: none;
+        font-size: 2rem;
+        flex-shrink: 0;
+      }
+
+      figure {
+        flex-shrink: 0;
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+// ==========================================
+// BIRTHDAY CELEBRATIONS SECTION
+// ==========================================
+.birthday-celebrations-section {
+  background: #39aeee url(../img/celebrations-bg.png) no-repeat center top;
+  padding: 12rem 0 6rem 0;
+  position: relative !important;
+
+  .birthday-rt-col {
+    padding: 1rem 0;
+
+    figure {
+      background: map-get($colors, secondary);
+      width: 67px;
+      height: 67px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      margin-bottom: 2rem;
+      padding: 0;
+      flex-shrink: 0;
+      @include box-shadow(0, 2px, 4px, rgba(0, 0, 0, 0.1));
+
+      .icomoon {
+        font-size: clamp(1.5rem, 2vw, 2rem);
+        color: map-get($colors, black);
+      }
+    }
+  }
+
+  // Tablet
+  @include max(map-get($breakpoints, "lg")) {
+    padding: 6rem 0 4rem 0;
+    background-size: cover;
+  }
+
+  // Mobile
+  @include max(map-get($breakpoints, "md")) {
+    padding: 4rem 0 3rem 0;
+
+    .row>[class*="col-md-6"] {
+      margin-bottom: 1.5rem;
+    }
+
+    .birthday-rt-col {
+      figure {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 0;
+      }
+
+      article {
+        h4 {
+          font-size: 1rem;
+        }
+
+        p {
+          font-size: $fsize - 2px;
+        }
+      }
+    }
+
+    .orange-btn,
+    .border-btn {
+      display: block !important;
+      text-align: center;
+      margin-top: 10px !important;
+    }
+  }
+}
+
+// ==========================================
+// PRICING SECTION
+// ==========================================
+.pricing-section {
+  padding: 6rem 0;
+
+  .price-col {
+    background: url(../img/pricing-offer-bg.png) no-repeat center;
+    background-size: cover;
+    height: 342px;
+    width: 100%;
+    padding: 0 72px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    @include max(map-get($breakpoints, "xxl")) {
+      padding: 0 40px;
+      background:none;
+      border:1px solid map-get($colors, gray);
+    }
+
+    .left-price-col {
+      border-right: 1px dashed map-get($colors, gray);
+    }
+
+    ul {
+      list-style: none;
+      padding: 25px 0 0 0;
+      margin: 0;
+
+      li {
+        font-size: $fsize - 1px;
+        padding-left: 20px;
+        position: relative;
+        margin-bottom: 10px;
+        border-left: 1px solid gray;
+      }
+    }
+
+    // Tablet
+    @include max(map-get($breakpoints, "lg")) {
+      padding: 0 40px;
+      height: auto;
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+    }
+
+    // Mobile
+    @include max(map-get($breakpoints, "md")) {
+      padding: 1.5rem 20px;
+      height: auto;
+
+      .row>[class*="col-md-8"] {
+        margin-bottom: 1.5rem;
+      }
+
+      .left-price-col {
+        border-right: none;
+        border-bottom: 1px dashed map-get($colors, gray);
+        padding-bottom: 1rem;
+      }
+
+      ul {
+        padding-top: 15px;
+      }
+    }
+  }
+
+  // Mobile - full section
+  @include max(map-get($breakpoints, "md")) {
+    padding: 3rem 0;
+
+    .row>[class*="col-md-4"] {
+      margin-bottom: 1.5rem;
+
+      img {
+        max-width: 200px;
+        margin: 0 auto;
+        display: block;
+      }
+    }
+  }
+}
+
+// ==========================================
+// TESTIMONIALS
+// ==========================================
+.home-testimonials {
+  padding: 6rem 0;
+  background-image: linear-gradient(140deg, #39AEEE40 25%, #D9273D40 50%), url(../img/testimonials-bg.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+
+  .swiper-wrapper {
+    padding: 1rem 0 3rem 0;
+
+    .swiper-slide {
+      background: map-get($colors, white);
+      padding: 4rem;
+      border-radius: 15px;
+      @include box-shadow(0, 2px, 4px, rgba(0, 0, 0, 0.2));
+      position: relative;
+      text-align: left !important;
+
+      .quote-icon {
+        position: absolute;
+        top: 15%;
+        right: 5%;
+        width: 50px;
+      }
+
+      .test-user {
+        .test-user-img {
+          width: 70px;
+          border-radius: 50%;
+          margin-right: 15px;
+          @include box-shadow(0, 2px, 4px, rgba(0, 0, 0, 0.1));
+          border: 3px solid #fff;
+        }
+
+        .test-name {
+          font-size: $fsize * 1.3;
+          font-weight: map-get($font-weights, semibold);
+          color: map-get($colors, black);
+        }
+      }
+
+      // Tablet
+      @include max(map-get($breakpoints, "lg")) {
+        padding: 2.5rem;
+      }
+
+      // Mobile
+      @include max(map-get($breakpoints, "md")) {
+        padding: 1.5rem;
+
+        .quote-icon {
+          width: 30px;
+          top: 10%;
+        }
+
+        .test-user {
+          .test-user-img {
+            width: 50px;
+          }
+
+          .test-name {
+            font-size: $fsize;
+          }
+        }
+
+        p.pt-4 {
+          font-size: $fsize - 2px;
+        }
+      }
+    }
+  }
+
+  @include max(map-get($breakpoints, "md")) {
+    padding: 3rem 0;
+  }
+}
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+
+  .swiper-pagination-bullet {
+    border-radius: 0;
+    background: map-get($colors, white);
+    opacity: 1;
+    width: 30px;
+    height: 3px;
+  }
+
+  .swiper-pagination-bullet-active {
+    background: map-get($colors, secondary);
+  }
+}
+
+// ==========================================
+// REACH US SECTION
+// ==========================================
+.reachus-home {
+  padding: 6rem 0;
+  position: relative;
+  overflow: hidden;
+
+  .reachicon01 {
+    width: 199px;
+    position: absolute;
+    top: 5%;
+    right: 2%;
+  }
+
+  .reachicon02 {
+    width: 199px;
+    position: absolute;
+    bottom: 5%;
+    left: 2%;
+  }
+
+  // Tablet
+  @include max(map-get($breakpoints, "lg")) {
+
+    .reachicon01,
+    .reachicon02 {
+      width: 120px;
+    }
+  }
+
+  // Mobile
+  @include max(map-get($breakpoints, "md")) {
+    padding: 3rem 0;
+
+    .reachicon01,
+    .reachicon02 {
+      width: 80px;
+    }
+
+    .section-title {
+
+      .border-btn,
+      .primary-btn {
+        display: block !important;
+        text-align: center;
+        margin-left: 0 !important;
+      }
+    }
+  }
+}
+
+// ==========================================
+// FOOTER
+// ==========================================
+.site-footer {
+  // ---- Row 1: link columns ----
+  .footer-links-band {
+    background: #f6f6f7;
+    padding: 4rem 0 3rem;
+  }
+
+  .footer-links-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+
+    @include max(map-get($breakpoints, "lg")) {
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 2.5rem;
+    }
+
+    @include max(map-get($breakpoints, "sm")) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .footer-col {
+    h4 {
+      font-size: $fsize;
+      font-weight: 700;
+      color: map-get($colors, black);
+      margin-bottom: 1.3rem;
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 0.7rem;
+    }
+
+    a {
+      color: map-get($colors, gray);
+      font-size: $fsize - 1px;
+      @include transition(color, 0.3s, ease);
+
+      &:hover,
+      &.is-current {
+        color: map-get($colors, primary);
+      }
+    }
+  }
+
+  // ---- Row 2: logo, social, tag cloud ----
+  .footer-mid-band {
+    background: map-get($colors, white);
+    padding: 3rem 0 2.5rem;
+  }
+
+  .footer-mid-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+
+    @include max(map-get($breakpoints, "sm")) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  .footer-logo img {
+    height: 38px;
+    width: auto;
+    display: block;
+  }
+
+  .footer-social {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+  }
+
+  .footer-social-link {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #f0f0f0;
+    color: map-get($colors, gray);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include transition(all, 0.3s, ease);
+
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    &:hover {
+      background: map-get($colors, primary);
+      color: map-get($colors, white);
+    }
+  }
+
+  .footer-tags {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    row-gap: 0.6rem;
+
+    a {
+      color: map-get($colors, gray);
+      font-size: $fsize - 2px;
+      padding: 0 0.9rem;
+      border-right: 1px solid #e2e2e2;
+      @include transition(color, 0.3s, ease);
+
+      &:hover {
+        color: map-get($colors, primary);
+      }
+
+      &:first-child {
+        padding-left: 0;
+      }
+
+      &:last-child {
+        border-right: none;
+      }
+    }
+  }
+
+  // ---- Row 3: copyright + payment badges ----
+  .footer-bottom-band {
+    background: map-get($colors, white);
+    border-top: 1px solid #ececec;
+    padding: 1.5rem 0;
+  }
+
+  .footer-bottom-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .footer-copyright {
+    color: map-get($colors, gray);
+    font-size: $fsize - 2px;
+    margin: 0;
+  }
+
+  .footer-payments {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .payment-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 26px;
+    padding: 0 0.7rem;
+    border: 1px solid #e2e2e2;
+    border-radius: 4px;
+    color: map-get($colors, gray);
+    font-size: $fsize - 4px;
+    @extend .font-semibold;
+    letter-spacing: 0.3px;
+  }
+}
+
+.movetop {
+    background: map-get($colors, primary);
+    color: map-get($colors, primary);
+    text-align: center;
+    line-height: 30px;
+    position: fixed;
+    border: 1px solid transparent;
+    padding: 8px;
+    position: fixed;
+    right: 1%;
+    bottom: 50px;
+    z-index: 9999;
+    width: 45px;
+    height: 45px;
+    @include transition(all, 0.2s, ease);
+    display: none;
+
+    &:hover {
+      background-color: map-get($colors, darksecondary);
+      color: map-get($colors, rgb(17, 5, 5));
+      text-decoration: none;
+
+      i {
+        color: map-get($colors, white);
+      }
+    }
+
+    i {
+      font-size: $fsize + 5;
+      color: map-get($colors, white);
+    }
+  }

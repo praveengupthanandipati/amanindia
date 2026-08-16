@@ -1,0 +1,226 @@
+{
+    "productsList": [
+        { "name": "Apple iPhone 11 Pro - 64GB Silver", "image": "img/products/product-8-600x600.jpg", "alt": "Apple iPhone 11 Pro - 64GB Silver", "category": "Mobiles", "brand": "Apple", "price": "₹64,900", "stock": "in-stock", "description": "A pro-grade triple-camera system, all-day battery life and a stunning Super Retina XDR display in a sleek Silver finish — the 64GB model is ready for everyday photography and performance.", "highlights": ["Pro triple-camera system with Ultra Wide, Wide and Telephoto lenses", "A13 Bionic chip for fast, fluid performance", "Water and dust resistant (IP68)"] },
+        { "name": "Apple iPhone 11 Pro - 256GB Silver", "image": "img/products/product-8-600x600.jpg", "alt": "Apple iPhone 11 Pro - 256GB Silver", "category": "Mobiles", "brand": "Apple", "price": "₹74,900", "stock": "in-stock", "description": "The same pro triple-camera system and Super Retina XDR display as the 64GB model, with 256GB of storage for photos, apps and 4K video without compromise.", "highlights": ["Pro triple-camera system with Ultra Wide, Wide and Telephoto lenses", "256GB of storage for photos, apps and 4K video", "A13 Bionic chip for fast, fluid performance"] },
+        { "name": "Apple iPhone 11 Pro Max - 256GB Gold", "image": "img/products/product-12-600x600.jpg", "alt": "Apple iPhone 11 Pro Max - 256GB Gold", "category": "Mobiles", "brand": "Apple", "price": "₹1,19,900", "stock": "in-stock", "description": "Apple's largest Pro display, longest battery life and a 256GB Gold finish make this the flagship choice for power users who want the biggest screen and the most storage.", "highlights": ["Largest Pro display with the longest battery life in the lineup", "Pro triple-camera system with Night mode", "256GB of storage in a premium Gold finish"] },
+        { "name": "Apple iPhone X - 64GB Silver", "image": "img/products/product-19-600x600.jpg", "alt": "Apple iPhone X - 64GB Silver", "category": "Mobiles", "brand": "Apple", "price": "₹47,900", "stock": "in-stock", "description": "The iPhone that introduced Face ID and an edge-to-edge OLED display — still a sharp, capable choice in Silver with 64GB of storage.", "highlights": ["Edge-to-edge Super Retina OLED display", "Face ID for secure, effortless unlocking", "Dual 12MP cameras with Portrait mode"] },
+        { "name": "Apple iPhone X - Refurbished 256GB", "image": "img/products/product-19-600x600.jpg", "alt": "Apple iPhone X - Refurbished 256GB", "category": "Mobiles", "brand": "Apple", "price": "₹39,900", "stock": "in-stock", "description": "A certified refurbished iPhone X with 256GB of storage, tested and restored to full working condition at a fraction of the original price.", "highlights": ["Certified refurbished and fully function-tested", "256GB of storage at a fraction of the original price", "Backed by standard warranty coverage"] },
+        { "name": "Samsung Galaxy A52 - 128GB Black", "image": "img/products/product-11-600x600.jpg", "alt": "Samsung Galaxy A52 - 128GB Black", "category": "Mobiles", "brand": "Samsung", "price": "₹26,999", "stock": "in-stock", "description": "A versatile all-rounder with a quad-camera setup, 128GB of storage and a 90Hz Super AMOLED display, finished in classic Black.", "highlights": ["Quad-camera setup with a 64MP main sensor", "90Hz Super AMOLED display for smooth scrolling", "128GB of expandable storage"] },
+        { "name": "Samsung Galaxy A52 - 128GB Blue", "image": "img/products/product-11-600x600.jpg", "alt": "Samsung Galaxy A52 - 128GB Blue", "category": "Mobiles", "brand": "Samsung", "price": "₹27,499", "stock": "in-stock", "description": "Same quad-camera versatility and 90Hz Super AMOLED display as the Black variant, in a fresh Blue finish.", "highlights": ["Quad-camera setup with a 64MP main sensor", "90Hz Super AMOLED display for smooth scrolling", "Fresh Blue finish with 128GB of storage"] },
+        { "name": "Samsung Galaxy A52 - 256GB Black", "image": "img/products/product-11-600x600.jpg", "alt": "Samsung Galaxy A52 - 256GB Black", "category": "Mobiles", "brand": "Samsung", "price": "₹29,999", "stock": "out-of-stock", "description": "The Galaxy A52 with double the storage — 256GB — for users who need more room for apps, photos and video, in Black.", "highlights": ["Quad-camera setup with a 64MP main sensor", "256GB of storage for power users", "90Hz Super AMOLED display"] },
+        { "name": "Apple iPhone 11 Pro Max - 256GB Space Grey", "image": "img/products/product-12-600x600.jpg", "alt": "Apple iPhone 11 Pro Max - 256GB Space Grey", "category": "Mobiles", "brand": "Apple", "price": "₹1,17,900", "stock": "in-stock", "description": "Apple's biggest Pro Max display and 256GB of storage in an understated Space Grey finish.", "highlights": ["Largest Pro display with the longest battery life in the lineup", "256GB of storage in an understated Space Grey finish", "Pro triple-camera system with Night mode"] },
+        { "name": "Apple iPhone 11 Pro - 64GB Midnight Green", "image": "img/products/product-8-600x600.jpg", "alt": "Apple iPhone 11 Pro - 64GB Midnight Green", "category": "Mobiles", "brand": "Apple", "price": "₹63,900", "stock": "in-stock", "description": "The iPhone 11 Pro's signature triple-camera system in the exclusive Midnight Green finish, with 64GB of storage.", "highlights": ["Exclusive Midnight Green finish", "Pro triple-camera system with Ultra Wide, Wide and Telephoto lenses", "A13 Bionic chip for fast, fluid performance"] },
+
+        { "name": "Apple iPad Pro 12.9\" - Space Grey", "image": "img/products/product-15-600x600.jpg", "alt": "Apple iPad Pro 12.9-inch - Space Grey", "category": "Laptops & Tablets", "brand": "Apple", "price": "₹81,900", "stock": "in-stock", "description": "A 12.9-inch Liquid Retina display, Apple Pencil support and pro-level performance make this the ultimate tablet for creative work, in Space Grey.", "highlights": ["12.9-inch Liquid Retina display", "Apple Pencil (2nd gen) and Magic Keyboard support", "Pro-grade performance for creative workflows"] },
+        { "name": "Apple iPad Pro 12.9\" - Silver", "image": "img/products/product-15-600x600.jpg", "alt": "Apple iPad Pro 12.9-inch - Silver", "category": "Laptops & Tablets", "brand": "Apple", "price": "₹83,900", "stock": "in-stock", "description": "The same 12.9-inch Liquid Retina display and pro performance as the Space Grey model, finished in Silver.", "highlights": ["12.9-inch Liquid Retina display", "Apple Pencil (2nd gen) and Magic Keyboard support", "Bright Silver finish"] },
+        { "name": "10.1\" Android Tablet - 64GB", "image": "img/products/product-6-600x600.jpg", "alt": "10.1-inch Android Tablet - 64GB", "category": "Laptops & Tablets", "brand": "Mi", "price": "₹12,499", "stock": "in-stock", "description": "A budget-friendly 10.1-inch Android tablet with 64GB of storage — great for streaming, browsing and light productivity.", "highlights": ["10.1-inch HD display", "64GB of internal storage, expandable via microSD", "Long battery life for streaming and browsing"] },
+        { "name": "10.1\" Android Tablet - 32GB", "image": "img/products/product-6-600x600.jpg", "alt": "10.1-inch Android Tablet - 32GB", "category": "Laptops & Tablets", "brand": "Mi", "price": "₹10,499", "stock": "in-stock", "description": "The same 10.1-inch Android tablet experience with 32GB of storage, ideal for casual everyday use.", "highlights": ["10.1-inch HD display", "32GB of internal storage, expandable via microSD", "Lightweight design for everyday use"] },
+        { "name": "ASUS VivoBook 15 Laptop", "image": "img/products/product-3-600x600.jpg", "alt": "ASUS VivoBook 15 Laptop", "category": "Laptops & Tablets", "brand": "ASUS", "price": "₹42,990", "stock": "in-stock", "description": "A reliable 15-inch everyday laptop built for study, work and browsing, balancing performance and portability.", "highlights": ["15.6-inch Full HD display", "Slim, lightweight build for portability", "Fast SSD storage for quick boot-ups"] },
+        { "name": "ASUS VivoBook 15 Laptop - Core i5", "image": "img/products/product-3-600x600.jpg", "alt": "ASUS VivoBook 15 Laptop - Core i5", "category": "Laptops & Tablets", "brand": "ASUS", "price": "₹49,990", "stock": "in-stock", "description": "The VivoBook 15 upgraded with an Intel Core i5 processor for smoother multitasking and faster everyday performance.", "highlights": ["Intel Core i5 processor for smooth multitasking", "15.6-inch Full HD display", "Fast SSD storage for quick boot-ups"] },
+        { "name": "ASUS VivoBook 15 Laptop - Ryzen 5", "image": "img/products/product-3-600x600.jpg", "alt": "ASUS VivoBook 15 Laptop - Ryzen 5", "category": "Laptops & Tablets", "brand": "ASUS", "price": "₹46,990", "stock": "out-of-stock", "description": "The VivoBook 15 powered by an AMD Ryzen 5 processor, offering strong multi-core performance for everyday and creative tasks.", "highlights": ["AMD Ryzen 5 processor with strong multi-core performance", "15.6-inch Full HD display", "Fast SSD storage for quick boot-ups"] },
+        { "name": "10.1\" Android Tablet - 64GB Wi-Fi+4G", "image": "img/products/product-6-600x600.jpg", "alt": "10.1-inch Android Tablet - 64GB Wi-Fi+4G", "category": "Laptops & Tablets", "brand": "Mi", "price": "₹14,999", "stock": "in-stock", "description": "The 64GB Android tablet with built-in 4G connectivity, so you can stay connected on the go without relying on Wi-Fi.", "highlights": ["Built-in 4G SIM support for connectivity on the go", "64GB of internal storage, expandable via microSD", "10.1-inch HD display"] },
+        { "name": "ASUS VivoBook 15 Laptop - Core i7", "image": "img/products/product-3-600x600.jpg", "alt": "ASUS VivoBook 15 Laptop - Core i7", "category": "Laptops & Tablets", "brand": "ASUS", "price": "₹58,990", "stock": "in-stock", "description": "The top-of-the-line VivoBook 15 configuration with an Intel Core i7 processor for demanding multitasking and productivity workloads.", "highlights": ["Intel Core i7 processor for demanding workloads", "15.6-inch Full HD display", "Fast SSD storage for quick boot-ups"] },
+
+        { "name": "Wireless Bluetooth Earbuds", "image": "img/products/head1-600x600.jpg", "alt": "Wireless Bluetooth Earbuds", "category": "Audio", "brand": "boAt", "price": "₹3,999", "stock": "in-stock", "description": "Compact true wireless earbuds with clear sound and a pocketable charging case — an easy everyday upgrade from wired headphones.", "highlights": ["True wireless design with a pocketable charging case", "Bluetooth 5.0 for a stable connection", "Sweat-resistant build for workouts"] },
+        { "name": "Pro Noise Cancelling Earbuds", "image": "img/products/head1-600x600.jpg", "alt": "Pro Noise Cancelling Earbuds", "category": "Audio", "brand": "boAt", "price": "₹5,499", "stock": "in-stock", "description": "Active noise cancellation blocks out the noise so you can focus on your music or calls, with a secure, comfortable fit.", "highlights": ["Active noise cancellation for distraction-free listening", "Touch controls for calls and music", "Up to 24 hours of battery life with the case"] },
+        { "name": "Bass Pro Wireless Earbuds", "image": "img/products/head1-600x600.jpg", "alt": "Bass Pro Wireless Earbuds", "category": "Audio", "brand": "boAt", "price": "₹2,999", "stock": "in-stock", "description": "Tuned for deep, punchy bass, these wireless earbuds are built for music lovers who want more low-end without sacrificing clarity.", "highlights": ["Deep, punchy bass tuning", "Bluetooth 5.0 with low-latency mode", "Compact, secure in-ear fit"] },
+        { "name": "Studio Wireless Earbuds - White", "image": "img/products/head1-600x600.jpg", "alt": "Studio Wireless Earbuds - White", "category": "Audio", "brand": "boAt", "price": "₹3,499", "stock": "out-of-stock", "description": "Studio-tuned wireless earbuds in a clean White finish, balancing crisp highs with warm mids for everyday listening.", "highlights": ["Studio-tuned sound with crisp highs and warm mids", "Clean White finish", "Touch controls for calls and music"] },
+
+        { "name": "Fitness Smartwatch - Red", "image": "img/products/product-4-600x600.jpg", "alt": "Fitness Smartwatch - Red", "category": "Wearables", "brand": "Noise", "price": "₹3,499", "stock": "in-stock", "description": "Track steps, heart rate and workouts on the go with this Red fitness smartwatch, built for an active lifestyle.", "highlights": ["Continuous heart-rate and SpO2 monitoring", "Multiple sport modes for workout tracking", "Up to 7 days of battery life"] },
+        { "name": "Smart Fitness Band - Red", "image": "img/products/product-4-600x600.jpg", "alt": "Smart Fitness Band - Red", "category": "Wearables", "brand": "Noise", "price": "₹1,999", "stock": "in-stock", "description": "A lightweight fitness band in Red that tracks activity, sleep and heart rate without weighing you down.", "highlights": ["Lightweight design for all-day wear", "Sleep and step tracking", "Water-resistant for workouts and rain"] },
+        { "name": "Fitness Smartwatch - Black", "image": "img/products/product-4-600x600.jpg", "alt": "Fitness Smartwatch - Black", "category": "Wearables", "brand": "Noise", "price": "₹3,699", "stock": "in-stock", "description": "The same activity and heart-rate tracking as the Red model, in a versatile Black finish that matches everything.", "highlights": ["Continuous heart-rate and SpO2 monitoring", "Multiple sport modes for workout tracking", "Versatile Black finish that matches everything"] },
+        { "name": "Smart Fitness Band - Black", "image": "img/products/product-4-600x600.jpg", "alt": "Smart Fitness Band - Black", "category": "Wearables", "brand": "Noise", "price": "₹2,099", "stock": "in-stock", "description": "A lightweight, everyday fitness band in Black for tracking steps, sleep and heart rate around the clock.", "highlights": ["Lightweight design for all-day wear", "Sleep and step tracking", "Water-resistant for workouts and rain"] },
+        { "name": "Galaxy Watch Active2 - Pink", "image": "img/products/product-23-600x600.jpg", "alt": "Galaxy Watch Active2 - Pink", "category": "Wearables", "brand": "Samsung", "price": "₹21,999", "stock": "out-of-stock", "description": "Samsung's Galaxy Watch Active2 combines fitness tracking, smartwatch features and a sleek Pink design in one wearable.", "highlights": ["Built-in GPS for workout tracking without a phone", "Heart-rate and stress monitoring", "Sleek Pink design with a rotating touch bezel"] },
+        { "name": "Galaxy Watch Active2 - Black", "image": "img/products/product-23-600x600.jpg", "alt": "Galaxy Watch Active2 - Black", "category": "Wearables", "brand": "Samsung", "price": "₹22,999", "stock": "in-stock", "description": "The Galaxy Watch Active2 in a classic Black finish, pairing fitness tracking with everyday smartwatch convenience.", "highlights": ["Built-in GPS for workout tracking without a phone", "Heart-rate and stress monitoring", "Classic Black finish"] },
+        { "name": "Galaxy Watch Active2 - Silver", "image": "img/products/product-23-600x600.jpg", "alt": "Galaxy Watch Active2 - Silver", "category": "Wearables", "brand": "Samsung", "price": "₹23,499", "stock": "in-stock", "description": "The Galaxy Watch Active2 in a bright Silver finish, combining health tracking with everyday smartwatch features.", "highlights": ["Built-in GPS for workout tracking without a phone", "Heart-rate and stress monitoring", "Bright Silver finish"] }
+    ],
+
+    "heroSlides": [
+        {
+            "image": "img/car01.png",
+            "eyebrow": "New Arrival",
+            "titleLines": ["Power Meets", "Elegance"],
+            "desc": "Discover next-gen smartphones with pro-grade cameras and all-day battery life.",
+            "cta": "Shop Mobiles",
+            "link": "products-list.php?category=mobiles"
+        },
+        {
+            "image": "img/car02.jpg",
+            "eyebrow": "Trending Now",
+            "titleLines": ["Bold. Vibrant.", "Unstoppable."],
+            "desc": "Striking design meets smart AI performance in every single shot.",
+            "cta": "Explore Smartphones",
+            "link": "products-list.php?category=mobiles"
+        },
+        {
+            "image": "img/car03.jpg",
+            "eyebrow": "Gamer's Choice",
+            "titleLines": ["Level Up Your", "Setup"],
+            "desc": "Precision controllers and fast-charging docks built for marathon sessions.",
+            "cta": "Shop Accessories",
+            "link": "products-list.php"
+        }
+    ],
+
+    "categories": [
+        { "slug": "mobiles", "name": "Mobiles", "tabOpen": true, "shopCategory": "mobiles", "icon": "<rect x='7' y='2' width='10' height='20' rx='2'></rect><line x1='11' y1='18' x2='13' y2='18'></line>" },
+        { "slug": "televisions", "name": "Televisions", "icon": "<rect x='3' y='4' width='18' height='12' rx='1.5'></rect><line x1='12' y1='16' x2='12' y2='19'></line><line x1='8' y1='21' x2='16' y2='21'></line>" },
+        { "slug": "refrigerators", "name": "Refrigerators", "icon": "<rect x='6' y='2' width='12' height='20' rx='1.5'></rect><line x1='6' y1='9' x2='18' y2='9'></line><line x1='9' y1='4.5' x2='9' y2='6.5'></line><line x1='9' y1='11.5' x2='9' y2='13.5'></line>" },
+        { "slug": "air-conditioners", "name": "Air Conditioners", "icon": "<rect x='2' y='6' width='20' height='7' rx='1.5'></rect><line x1='6' y1='9.5' x2='6' y2='9.5'></line><line x1='11' y1='9.5' x2='11' y2='9.5'></line><path d='M8 13c0 2-1.5 2.5-1.5 4.5'></path><path d='M13 13c0 2-1.5 2.5-1.5 4.5'></path><path d='M18 13c0 2-1.5 2.5-1.5 4.5'></path>" },
+        { "slug": "washing-machines", "name": "Washing Machines", "icon": "<rect x='4' y='2' width='16' height='20' rx='2'></rect><line x1='7' y1='5' x2='9.5' y2='5'></line><circle cx='12' cy='14' r='5'></circle><circle cx='12' cy='14' r='1.8'></circle>" },
+        { "slug": "laptops", "name": "Laptops", "shopCategory": "laptops-tablets", "icon": "<rect x='5' y='4' width='14' height='9.5' rx='1'></rect><path d='M2.5 18.5h19l-1.7-3.9a1 1 0 00-.9-.6H5.1a1 1 0 00-.9.6L2.5 18.5z'></path>" },
+        { "slug": "speakers", "name": "Speakers", "shopCategory": "audio", "icon": "<rect x='7' y='2' width='10' height='20' rx='2.5'></rect><circle cx='12' cy='6.8' r='1.3'></circle><circle cx='12' cy='15' r='4'></circle><circle cx='12' cy='15' r='1.5'></circle>" },
+        { "slug": "water-purifiers", "name": "Water Purifiers", "icon": "<path d='M12 3c3.2 4 6.2 7.8 6.2 11.2a6.2 6.2 0 11-12.4 0C5.8 10.8 8.8 7 12 3z'></path><path d='M9 15.2c0 1.5 1.2 2.6 2.6 2.6'></path>" }
+    ],
+
+    "promoColumns": [
+        {
+            "variant": "slate",
+            "eyebrow": "Premium Audio",
+            "title": "Headphones",
+            "priceNow": "₹1,499",
+            "priceOld": "₹1,999",
+            "link": "products-list.php?category=audio",
+            "media": "<svg viewBox='0 0 220 200' xmlns='http://www.w3.org/2000/svg'><path d='M40 100C40 46.8 80.6 12 130 12c49.4 0 60 44.8 60 88' fill='none' stroke='#282828' stroke-width='11' stroke-linecap='round'></path><ellipse cx='42' cy='120' rx='27' ry='36' fill='#282828'></ellipse><ellipse cx='42' cy='120' rx='16' ry='25' fill='#E4002B'></ellipse><ellipse cx='188' cy='112' rx='27' ry='36' fill='#3a3a3a'></ellipse><ellipse cx='188' cy='112' rx='16' ry='25' fill='#E4002B' opacity='0.85'></ellipse></svg>"
+        },
+        {
+            "variant": "sky",
+            "eyebrow": "Latest Arrivals",
+            "title": "Cell Phones",
+            "priceNow": "₹24,999",
+            "priceOld": "₹32,999",
+            "link": "products-list.php?category=mobiles",
+            "media": "<svg viewBox='0 0 140 220' xmlns='http://www.w3.org/2000/svg'><defs><linearGradient id='phoneScreen' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='#39AEEE'></stop><stop offset='1' stop-color='#E4002B'></stop></linearGradient></defs><rect x='10' y='5' width='120' height='210' rx='24' fill='#1c1c1c'></rect><rect x='18' y='16' width='104' height='188' rx='14' fill='url(#phoneScreen)'></rect><circle cx='70' cy='12' r='2.5' fill='#555'></circle><rect x='46' y='34' width='48' height='10' rx='5' fill='rgba(255,255,255,0.35)'></rect></svg>"
+        },
+        {
+            "variant": "peach",
+            "eyebrow": "Everyday Essentials",
+            "title": "Accessories",
+            "priceNow": "₹1,999",
+            "priceOld": "₹2,999",
+            "link": "products-list.php?category=wearables",
+            "media": "<svg viewBox='0 0 160 220' xmlns='http://www.w3.org/2000/svg'><defs><linearGradient id='watchFace' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='#EB7533'></stop><stop offset='1' stop-color='#E4002B'></stop></linearGradient></defs><rect x='54' y='0' width='52' height='60' rx='12' fill='#282828'></rect><rect x='54' y='160' width='52' height='60' rx='12' fill='#282828'></rect><rect x='30' y='52' width='100' height='116' rx='26' fill='#3a3a3a'></rect><rect x='42' y='64' width='76' height='92' rx='17' fill='url(#watchFace)'></rect><line x1='80' y1='76' x2='80' y2='84' stroke='#fff' stroke-width='2' stroke-linecap='round' opacity='0.7'></line><circle cx='80' cy='110' r='4' fill='#fff' opacity='0.85'></circle><line x1='80' y1='136' x2='80' y2='144' stroke='#fff' stroke-width='2' stroke-linecap='round' opacity='0.7'></line></svg>"
+        }
+    ],
+
+    "featuredProducts": [
+        { "category": "Headphones", "image": "img/products/head1-600x600.jpg", "alt": "Wireless Bluetooth Earbuds", "name": "Wireless Bluetooth Earbuds", "price": "₹3,999" },
+        { "category": "Phones", "image": "img/products/product-8-600x600.jpg", "alt": "Apple iPhone 11 Pro - 64GB Silver", "name": "Apple iPhone 11 Pro - 64GB Silver", "price": "₹64,900" },
+        { "category": "Phones", "image": "img/products/product-12-600x600.jpg", "alt": "Apple iPhone 11 Pro Max - 256GB Gold", "name": "Apple iPhone 11 Pro Max - 256GB Gold", "price": "₹1,19,900" },
+        { "category": "Phones", "image": "img/products/product-19-600x600.jpg", "alt": "Apple iPhone X - 64GB Silver", "name": "Apple iPhone X - 64GB Silver", "price": "₹47,900" },
+        { "category": "Phones", "image": "img/products/product-11-600x600.jpg", "alt": "Samsung Galaxy A52 - 128GB Black", "name": "Samsung Galaxy A52 - 128GB Black", "price": "₹26,999" },
+        { "category": "Laptop & Tablet", "image": "img/products/product-15-600x600.jpg", "alt": "Apple iPad Pro 12.9-inch - Space Grey", "name": "Apple iPad Pro 12.9\" - Space Grey", "price": "₹81,900" },
+        { "category": "Laptop & Tablet", "image": "img/products/product-6-600x600.jpg", "alt": "10.1-inch Android Tablet - 64GB", "name": "10.1\" Android Tablet - 64GB", "price": "₹12,499" },
+        { "category": "Laptop & Tablet", "image": "img/products/product-3-600x600.jpg", "alt": "ASUS VivoBook 15 Laptop", "name": "ASUS VivoBook 15 Laptop", "price": "₹42,990" },
+        { "category": "Gadgets", "image": "img/products/product-4-600x600.jpg", "alt": "Fitness Smartwatch - Red", "name": "Fitness Smartwatch - Red", "price": "₹3,499" },
+        { "category": "Gadgets", "image": "img/products/product-23-600x600.jpg", "alt": "Galaxy Watch Active2 - Pink", "name": "Galaxy Watch Active2 - Pink", "price": "₹21,999", "oos": true },
+        { "category": "Headphones", "image": "img/products/head1-600x600.jpg", "alt": "Pro Noise Cancelling Earbuds", "name": "Pro Noise Cancelling Earbuds", "price": "₹5,499" },
+        { "category": "Phones", "image": "img/products/product-8-600x600.jpg", "alt": "Apple iPhone 11 Pro - 256GB Silver", "name": "Apple iPhone 11 Pro - 256GB Silver", "price": "₹74,900" },
+        { "category": "Phones", "image": "img/products/product-19-600x600.jpg", "alt": "Apple iPhone X - Refurbished 256GB", "name": "Apple iPhone X - Refurbished 256GB", "price": "₹39,900" },
+        { "category": "Gadgets", "image": "img/products/product-4-600x600.jpg", "alt": "Smart Fitness Band - Red", "name": "Smart Fitness Band - Red", "price": "₹1,999" },
+        { "category": "Laptop & Tablet", "image": "img/products/product-6-600x600.jpg", "alt": "10.1-inch Android Tablet - 32GB", "name": "10.1\" Android Tablet - 32GB", "price": "₹10,499" }
+    ],
+
+    "tabProducts": {
+        "all": [
+            { "category": "iPhone", "image": "img/products/product-8-600x600.jpg", "alt": "Apple iPhone 11 Pro - 64GB Silver", "name": "Apple iPhone 11 Pro - 64GB Silver", "price": "₹64,900" },
+            { "isNew": true, "image": "img/products/product-11-600x600.jpg", "alt": "Samsung Galaxy A52 - 128GB Black", "name": "Samsung Galaxy A52 - 128GB Black", "price": "₹26,999" },
+            { "category": "iPhone", "image": "img/products/product-12-600x600.jpg", "alt": "Apple iPhone 11 Pro Max - 256GB Gold", "name": "Apple iPhone 11 Pro Max - 256GB Gold", "price": "₹1,19,900", "priceOld": "₹1,29,900" },
+            { "category": "iPhone", "image": "img/products/product-19-600x600.jpg", "alt": "Apple iPhone X - 64GB Silver", "name": "Apple iPhone X - 64GB Silver", "price": "₹47,900" },
+            { "category": "Tablet", "image": "img/products/product-15-600x600.jpg", "alt": "Apple iPad Pro 12.9-inch - Space Grey", "name": "Apple iPad Pro 12.9\" - Space Grey", "price": "₹81,900" },
+            { "category": "Tablet", "image": "img/products/product-6-600x600.jpg", "alt": "10.1-inch Android Tablet - 64GB", "name": "10.1\" Android Tablet - 64GB", "price": "₹12,499" },
+            { "category": "Laptop", "image": "img/products/product-3-600x600.jpg", "alt": "ASUS VivoBook 15 Laptop", "name": "ASUS VivoBook 15 Laptop", "price": "₹42,990" }
+        ],
+        "mobiles": [
+            { "category": "iPhone", "image": "img/products/product-8-600x600.jpg", "alt": "Apple iPhone 11 Pro - 64GB Silver", "name": "Apple iPhone 11 Pro - 64GB Silver", "price": "₹64,900" },
+            { "isNew": true, "image": "img/products/product-11-600x600.jpg", "alt": "Samsung Galaxy A52 - 128GB Black", "name": "Samsung Galaxy A52 - 128GB Black", "price": "₹26,999" },
+            { "category": "iPhone", "image": "img/products/product-12-600x600.jpg", "alt": "Apple iPhone 11 Pro Max - 256GB Gold", "name": "Apple iPhone 11 Pro Max - 256GB Gold", "price": "₹1,19,900", "priceOld": "₹1,29,900" },
+            { "category": "iPhone", "image": "img/products/product-19-600x600.jpg", "alt": "Apple iPhone X - 64GB Silver", "name": "Apple iPhone X - 64GB Silver", "price": "₹47,900" }
+        ],
+        "televisions": [],
+        "refrigerators": [],
+        "air-conditioners": [],
+        "washing-machines": [],
+        "laptops": [
+            { "category": "Laptop", "image": "img/products/product-3-600x600.jpg", "alt": "ASUS VivoBook 15 Laptop", "name": "ASUS VivoBook 15 Laptop", "price": "₹42,990" },
+            { "category": "Tablet", "image": "img/products/product-15-600x600.jpg", "alt": "Apple iPad Pro 12.9-inch - Space Grey", "name": "Apple iPad Pro 12.9\" - Space Grey", "price": "₹81,900" },
+            { "category": "Tablet", "image": "img/products/product-6-600x600.jpg", "alt": "10.1-inch Android Tablet - 64GB", "name": "10.1\" Android Tablet - 64GB", "price": "₹12,499" }
+        ],
+        "speakers": [],
+        "water-purifiers": []
+    },
+
+    "brands": [
+        { "image": "img/brands/h4-client-1-h.png", "alt": "iPhone", "shopBrand": "apple" },
+        { "image": "img/brands/h4-client-2-h.png", "alt": "LG Electronics" },
+        { "image": "img/brands/h4-client-3-h.png", "alt": "Samsung", "shopBrand": "samsung" },
+        { "image": "img/brands/h4-client-4-h.png", "alt": "Huawei" },
+        { "image": "img/brands/h4-client-5-h.png", "alt": "Bosch" },
+        { "image": "img/brands/h4-client-6-h.png", "alt": "Samsonite" }
+    ],
+
+    "footerLinks": {
+        "Make Money with Us": [
+            { "label": "Sell on Aman India" },
+            { "label": "Sell Your Services on Aman India" },
+            { "label": "Sell on Aman India Business" },
+            { "label": "Sell Your Apps on Aman India" },
+            { "label": "Become an Affiliate" },
+            { "label": "Advertise Your Products" },
+            { "label": "Sell & Publish with Us" },
+            { "label": "Become an Aman India Vendor" }
+        ],
+        "Let Us Help You": [
+            { "label": "Your Account" },
+            { "label": "Your Orders" },
+            { "label": "Returns & Replacements" },
+            { "label": "Shipping Rates & Policies", "current": true },
+            { "label": "Refund and Returns Policy" },
+            { "label": "Privacy Policy" },
+            { "label": "Terms and Conditions" },
+            { "label": "Help Center", "href": "faq.php" }
+        ],
+        "Get to Know Us": [
+            { "label": "Careers" },
+            { "label": "About Aman India", "href": "about.php" },
+            { "label": "Investor Relations" },
+            { "label": "Aman India Devices" },
+            { "label": "Customer Reviews" },
+            { "label": "Privacy Policy" },
+            { "label": "Contact Us" }
+        ]
+    },
+
+    "footerTags": [
+        { "label": "iPhone", "href": "products-list.php?category=mobiles&brand=apple" },
+        { "label": "Galaxy A52", "href": "products-list.php?category=mobiles&brand=samsung" },
+        { "label": "iPad Pro", "href": "products-list.php?category=laptops-tablets&brand=apple" },
+        { "label": "ASUS VivoBook", "href": "products-list.php?category=laptops-tablets&brand=asus" },
+        { "label": "Smartwatch", "href": "products-list.php?category=wearables" },
+        { "label": "Wireless Earbuds", "href": "products-list.php?category=audio" },
+        { "label": "LG", "href": "products-list.php" },
+        { "label": "Samsung", "href": "products-list.php?brand=samsung" },
+        { "label": "Huawei", "href": "products-list.php" },
+        { "label": "Bosch", "href": "products-list.php" },
+        { "label": "Samsonite", "href": "products-list.php" },
+        { "label": "Mobiles", "href": "products-list.php?category=mobiles" },
+        { "label": "Televisions", "href": "products-list.php" },
+        { "label": "Refrigerators", "href": "products-list.php" },
+        { "label": "Air Conditioners", "href": "products-list.php" },
+        { "label": "Washing Machines", "href": "products-list.php" },
+        { "label": "Laptops", "href": "products-list.php?category=laptops-tablets" },
+        { "label": "Speakers", "href": "products-list.php?category=audio" },
+        { "label": "Water Purifiers", "href": "products-list.php" }
+    ],
+
+    "footerSocial": [
+        { "name": "Facebook", "icon": "<path d='M15 8h-2a2 2 0 00-2 2v3H9v3h2v6h3v-6h2.2l.8-3H14v-2a1 1 0 011-1h2V8z'></path>" },
+        { "name": "Twitter", "icon": "<path d='M20 6.5c-.6.3-1.3.5-2 .6.7-.4 1.3-1.2 1.5-2-.7.4-1.5.7-2.3.9A3.6 3.6 0 0015 5c-2 0-3.6 1.7-3.6 3.7 0 .3 0 .6.1.8-3-.1-5.6-1.6-7.4-3.9-.3.5-.5 1.2-.5 1.8 0 1.3.6 2.4 1.6 3-.6 0-1.1-.2-1.6-.4v.1c0 1.8 1.2 3.2 2.9 3.6-.3.1-.6.1-.9.1-.2 0-.4 0-.6-.1.4 1.4 1.7 2.5 3.2 2.5A7.2 7.2 0 014 18.3 10.1 10.1 0 009.3 20c6.4 0 9.9-5.4 9.9-10.1V9.4c.7-.5 1.3-1.1 1.8-1.8-.6.3-1.3.5-2 .6z'></path>" },
+        { "name": "LinkedIn", "icon": "<rect x='4' y='9' width='3.5' height='10'></rect><circle cx='5.7' cy='5.5' r='1.6'></circle><path d='M11 19v-6.5c0-1.5 1-2.5 2.5-2.5s2.5 1 2.5 2.5V19'></path><path d='M11 19v-10'></path><path d='M16 19v-6.5'></path>" },
+        { "name": "Pinterest", "icon": "<circle cx='12' cy='12' r='9'></circle><path d='M9.5 19c1-3 1.8-6 2.5-9a2.5 2.5 0 114 2c-.3 1.7-1.6 3-3.2 3'></path>" },
+        { "name": "Instagram", "icon": "<rect x='3.5' y='3.5' width='17' height='17' rx='5'></rect><circle cx='12' cy='12' r='4'></circle><circle cx='17' cy='7' r='1'></circle>" },
+        { "name": "YouTube", "icon": "<rect x='2.5' y='6' width='19' height='12' rx='3.5'></rect><path d='M10.5 9.5l5 2.5-5 2.5z' fill='currentColor' stroke='none'></path>" }
+    ],
+
+    "paymentBadges": ["VISA", "Mastercard", "RuPay", "UPI", "PayPal"]
+}
