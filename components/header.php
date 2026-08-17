@@ -6,7 +6,7 @@
             <ul class="utility-links-left">
                 <li><a href="about.php">About Us</a></li>
                 <li><a href="faq.php">FAQ</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="contact.php">Contact</a></li>
             </ul>
             <ul class="utility-links-right">
                 <li><a href="track-order.php">Order Tracking</a></li>
@@ -37,7 +37,7 @@
             </div>
 
             <div class="header-actions">
-                <a href="#" class="header-action-link">
+                <a href="contact.php" class="header-action-link">
                     <i class="fi fi-rs-headset"></i>
                     <span>Support</span>
                 </a>

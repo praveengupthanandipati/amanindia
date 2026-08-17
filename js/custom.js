@@ -827,3 +827,21 @@ document.addEventListener('DOMContentLoaded', function() {
     observer.observe(el);
   });
 });
+
+// Contact page - enquiry form submit
+$(function () {
+  var $form = $('#enquiryForm');
+  if (!$form.length) return;
+
+  $form.on('submit', function (e) {
+    e.preventDefault();
+    if (!this.checkValidity()) {
+      this.reportValidity();
+      return;
+    }
+
+    $form.hide();
+    $('#enquirySuccess').removeAttr('hidden');
+    $('html, body').animate({ scrollTop: $('#enquirySuccess').offset().top - 100 }, 300);
+  });
+});
