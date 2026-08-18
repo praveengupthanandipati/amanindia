@@ -11,7 +11,7 @@ $featuredProducts = $siteData['featuredProducts'];
 $tabProducts   = $siteData['tabProducts'];
 $brands        = $siteData['brands'];
 $footerLinks   = $siteData['footerLinks'];
-$footerTags    = $siteData['footerTags'];
+$footerContact = $siteData['footerContact'];
 $footerSocial  = $siteData['footerSocial'];
 $paymentBadges = $siteData['paymentBadges'];
 

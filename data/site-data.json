@@ -160,58 +160,22 @@
     ],
 
     "footerLinks": {
-        "Make Money with Us": [
-            { "label": "Sell on Aman India" },
-            { "label": "Sell Your Services on Aman India" },
-            { "label": "Sell on Aman India Business" },
-            { "label": "Sell Your Apps on Aman India" },
-            { "label": "Become an Affiliate" },
-            { "label": "Advertise Your Products" },
-            { "label": "Sell & Publish with Us" },
-            { "label": "Become an Aman India Vendor" }
-        ],
-        "Let Us Help You": [
-            { "label": "Your Account" },
-            { "label": "Your Orders" },
-            { "label": "Returns & Replacements" },
-            { "label": "Shipping Rates & Policies", "current": true },
-            { "label": "Refund and Returns Policy" },
-            { "label": "Privacy Policy" },
-            { "label": "Terms and Conditions" },
-            { "label": "Help Center", "href": "faq.php" }
-        ],
-        "Get to Know Us": [
-            { "label": "Careers" },
-            { "label": "About Aman India", "href": "about.php" },
-            { "label": "Investor Relations" },
-            { "label": "Aman India Devices" },
-            { "label": "Customer Reviews" },
-            { "label": "Privacy Policy" },
-            { "label": "Contact Us" }
+        "Policies & Pages": [
+            { "label": "Privacy Policy", "href": "privacy.php" },
+            { "label": "Terms and Conditions", "href": "terms.php" },
+            { "label": "Home", "href": "index.php" },
+            { "label": "About Us", "href": "about.php" },
+            { "label": "FAQs", "href": "faq.php" },
+            { "label": "Track Order", "href": "track-order.php" },
+            { "label": "Contact Us", "href": "contact.php" }
         ]
     },
 
-    "footerTags": [
-        { "label": "iPhone", "href": "products-list.php?category=mobiles&brand=apple" },
-        { "label": "Galaxy A52", "href": "products-list.php?category=mobiles&brand=samsung" },
-        { "label": "iPad Pro", "href": "products-list.php?category=laptops-tablets&brand=apple" },
-        { "label": "ASUS VivoBook", "href": "products-list.php?category=laptops-tablets&brand=asus" },
-        { "label": "Smartwatch", "href": "products-list.php?category=wearables" },
-        { "label": "Wireless Earbuds", "href": "products-list.php?category=audio" },
-        { "label": "LG", "href": "products-list.php" },
-        { "label": "Samsung", "href": "products-list.php?brand=samsung" },
-        { "label": "Huawei", "href": "products-list.php" },
-        { "label": "Bosch", "href": "products-list.php" },
-        { "label": "Samsonite", "href": "products-list.php" },
-        { "label": "Mobiles", "href": "products-list.php?category=mobiles" },
-        { "label": "Televisions", "href": "products-list.php" },
-        { "label": "Refrigerators", "href": "products-list.php" },
-        { "label": "Air Conditioners", "href": "products-list.php" },
-        { "label": "Washing Machines", "href": "products-list.php" },
-        { "label": "Laptops", "href": "products-list.php?category=laptops-tablets" },
-        { "label": "Speakers", "href": "products-list.php?category=audio" },
-        { "label": "Water Purifiers", "href": "products-list.php" }
-    ],
+    "footerContact": {
+        "phone": { "label": "+91 1800-123-4567", "href": "tel:+9118001234567" },
+        "email": { "label": "support@amanindia.com", "href": "mailto:support@amanindia.com" },
+        "address": "4th Floor, Cyber Towers, HITEC City, Hyderabad, Telangana 500081, India"
+    },
 
     "footerSocial": [
         { "name": "Facebook", "icon": "<path d='M15 8h-2a2 2 0 00-2 2v3H9v3h2v6h3v-6h2.2l.8-3H14v-2a1 1 0 011-1h2V8z'></path>" },

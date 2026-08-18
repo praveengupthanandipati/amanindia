@@ -2,10 +2,8 @@
 include __DIR__ . '/data.php';
 
 $footerColumns = [
-    'Make Money with Us' => $footerLinks['Make Money with Us'],
-    'Product Categories'  => array_map(fn($cat) => ['label' => $cat['name'], 'href' => categoryShopUrl($cat)], $categories),
-    'Let Us Help You'     => $footerLinks['Let Us Help You'],
-    'Get to Know Us'      => $footerLinks['Get to Know Us'],
+    'Product Categories' => array_map(fn($cat) => ['label' => $cat['name'], 'href' => categoryShopUrl($cat)], $categories),
+    'Policies & Pages'    => $footerLinks['Policies & Pages'],
 ];
 ?>
 <!-- footer -->
@@ -25,6 +23,15 @@ $footerColumns = [
                     </ul>
                 </div>
                 <?php endforeach; ?>
+
+                <div class="footer-col footer-col--contact">
+                    <h4>Contact Us</h4>
+                    <ul class="footer-contact-list">
+                        <li><a href="<?= htmlspecialchars($footerContact['phone']['href']) ?>"><?= htmlspecialchars($footerContact['phone']['label']) ?></a></li>
+                        <li><a href="<?= htmlspecialchars($footerContact['email']['href']) ?>"><?= htmlspecialchars($footerContact['email']['label']) ?></a></li>
+                        <li><?= htmlspecialchars($footerContact['address']) ?></li>
+                    </ul>
+                </div>
 
             </div>
         </div>
@@ -46,12 +53,6 @@ $footerColumns = [
                     </a>
                     <?php endforeach; ?>
                 </div>
-            </div>
-
-            <div class="footer-tags">
-                <?php foreach ($footerTags as $tag): ?>
-                <a href="<?= htmlspecialchars($tag['href']) ?>"><?= htmlspecialchars($tag['label']) ?></a>
-                <?php endforeach; ?>
             </div>
         </div>
     </div>
